@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var port     = process.env.PORT || 3000; // set our port
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://heroku_app32758175:5nitvt7p9n49k6kuto374c55mn@ds029051.mongolab.com:29051/heroku_app32758175', function(err, res) {
+mongoose.connect('mongodb://heroku_app33596588:od7hlthb85a6mqq67c9kq9cqi4@ds063869.mongolab.com:63869/heroku_app33596588', function(err, res) {
   if(err) throw err;
   console.log('Conectado con éxito a la BBDD');
 }); // connect to our database
