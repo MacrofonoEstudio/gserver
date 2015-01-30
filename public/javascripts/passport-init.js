@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose');
-var User  = require('../../models/fideliausers');
+var User  = require('../../models/users');
 
 var FacebookStrategy = require('passport-facebook').Strategy;
 var LocalStrategy = require('passport-local').Strategy;
@@ -20,9 +20,9 @@ module.exports = function(passport){
 
 
 	passport.use(new FacebookStrategy({
-    clientID: 315199665271079,
-    clientSecret: "ae3b24781563d34b5bdf263851bdc17b",
-    callbackURL: "https://fideliapp1.herokuapp.com/auth/facebook/logged",
+    clientID: 1570739009810940,
+    clientSecret: "24293420f6a416daeb1a5a7b7345bb46",
+    callbackURL: "https://appgarito.herokuapp.com/auth/facebook/logged",
     profileFields : ['id', 'displayName', 'photos', 'gender', 'emails'] // Campos del profile de FB que vamos a solicitar
 	  },
 
