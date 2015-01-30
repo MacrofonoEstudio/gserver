@@ -6,7 +6,7 @@ var bcrypt = require('bcrypt-nodejs');
 var async = require('async');
 var crypto = require('crypto'); // Node integrated library that generates random token 
 
-var fideliappSchema   = new Schema({
+var garitoSchema   = new Schema({
 	name : String, // Nombre del usuario
 	provider: String, // Facebook o Email
 	provider_id : String, // ID que proporciona Twitter o Facebook...
@@ -21,7 +21,7 @@ var fideliappSchema   = new Schema({
 });
 
 // We modify the Mongoose Schema to encrypt the passwords in the save action
-fideliappSchema.pre('save', function(next) {
+garitoSchema.pre('save', function(next) {
   var user = this;
   var SALT_FACTOR = 5;
 
@@ -39,11 +39,11 @@ fideliappSchema.pre('save', function(next) {
 });
 
 // Adds to the schema a method that compares passwords to verify
-fideliappSchema.methods.comparePassword = function(candidatePassword, callback) {
+garitoSchema.methods.comparePassword = function(candidatePassword, callback) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) return cb(err);
     callback(null, isMatch);
   });
 };
 
-module.exports = mongoose.model('fideliaUser', fideliappSchema);
+module.exports = mongoose.model('garitoUsers', garitoSchema);
