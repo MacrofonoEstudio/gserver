@@ -26,8 +26,7 @@ router.post('/users', function(req, res) {
 
 	var user = new User();		// create a new instance of the model
 	user.name = req.body.name;  // set the name (comes from the request)
-	user.surname = req.body.surname;
-	user.gender = req.body.gender;
+	user.email = req.body.email;
 
 	user.save(function(err) {
 		if (err)
