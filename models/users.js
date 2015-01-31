@@ -16,7 +16,7 @@ var garitoSchema   = new Schema({
 	password: String,
 	verify: Boolean,
 	resetPasswordToken: String, // Código aleatorio generado por Crypto para verificar el usuario a la hora de generar un nuevo password
-  	resetPasswordExpires: Date, // Tiempo que va a estar activo el código para renovar el password
+  resetPasswordExpires: Date, // Tiempo que va a estar activo el código para renovar el password
 	createdAt : {type: Date, default: Date.now} // Fecha de creación
 });
 
