@@ -16,6 +16,12 @@ var transporter = nodemailer.createTransport({
 });
 
 
+router.get('/', function(req, res) {
+
+	res.render('index');
+
+});
+
 router.post('/users', function(req, res) {
 
 	var user = new User();		// create a new instance of the model
